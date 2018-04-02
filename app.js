@@ -33,6 +33,13 @@ app.use(cors());
 // Body Parser
 app.use(bodyParser.json());
 
+// Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
+
 // Users Routes
 app.use('/users', users);
 
